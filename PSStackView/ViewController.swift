@@ -17,6 +17,7 @@ class ViewController: UIViewController {
     var emojiIndex = 0
 
     @IBOutlet weak var customizableStackView: PSStackView!
+    @IBOutlet weak var paddingLabel: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,6 +49,16 @@ class ViewController: UIViewController {
 
     @IBAction func backgroundBorderRadiusChanged(_ sender: UISlider) {
         customizableStackView.backgroundCornerRadius = CGFloat(sender.value)
+    }
+    
+    @IBAction func decrementPaddingButtonPressed(_ sender: UIButton) {
+        customizableStackView.padding -= 1
+        paddingLabel.text = "\(Int(customizableStackView.padding))"
+    }
+    
+    @IBAction func incrementPaddingButtonPressed(_ sender: Any) {
+        customizableStackView.padding += 1
+        paddingLabel.text = "\(Int(customizableStackView.padding))"
     }
     
     @IBAction func addEmojiPressed(_ sender: UIButton) {

@@ -53,6 +53,13 @@ class PSStackView: UIStackView {
         }
     }
     
+    @IBInspectable
+    open var padding: CGFloat = 0 {
+        didSet {
+            backgroundView.add(padding: padding, to: self)
+        }
+    }
+    
 }
 
 public extension UIView {
@@ -62,6 +69,15 @@ public extension UIView {
             trailingAnchor.constraint(equalTo: view.trailingAnchor),
             topAnchor.constraint(equalTo: view.topAnchor),
             bottomAnchor.constraint(equalTo: view.bottomAnchor)
+        ])
+    }
+    
+    public func add(padding: CGFloat, to view: UIView) {
+        NSLayoutConstraint.activate([
+            leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: -padding),
+            trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: padding),
+            topAnchor.constraint(equalTo: view.topAnchor, constant: -padding),
+            bottomAnchor.constraint(equalTo: view.bottomAnchor, constant: padding)
         ])
     }
 }
