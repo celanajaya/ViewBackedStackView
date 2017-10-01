@@ -10,7 +10,7 @@ import UIKit
 
 class ViewController: UIViewController {
     
-    let colors : [UIColor] = [.clear, .green, .blue, .purple, .orange, .yellow, .magenta, .red]
+    let colors : [UIColor] = [.clear, .green, .blue, .purple, .black, .orange, .yellow, .magenta, .red]
     let emojis : [UIImage] = [#imageLiteral(resourceName: "emoji5"), #imageLiteral(resourceName: "emoji4"), #imageLiteral(resourceName: "emoji3"), #imageLiteral(resourceName: "emoji2"), #imageLiteral(resourceName: "emoji1")]
     var backgroundColorIndex = 0
     var backgroundBorderColorIndex = 0
