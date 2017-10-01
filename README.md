@@ -1,3 +1,3 @@
 # ViewBackedStackView
 A UIStackView subclass with a customizable background view
-![alt text](https://user-images.githubusercontent.com/10944090/28749381-705e6418-747a-11e7-8988-e8d65c9a0119.gif "Logo Title Text 1")
+![ezgif com-resize](https://user-images.githubusercontent.com/10944090/31056738-acca41c2-a68b-11e7-86b9-87a974cab874.gif)
