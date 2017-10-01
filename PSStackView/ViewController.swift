@@ -51,15 +51,10 @@ class ViewController: UIViewController {
         customizableStackView.backgroundCornerRadius = CGFloat(sender.value)
     }
     
-    @IBAction func decrementPaddingButtonPressed(_ sender: UIButton) {
-        customizableStackView.padding -= 1
-        paddingLabel.text = "\(Int(customizableStackView.padding))"
+    @IBAction func paddingChanged(_ sender: UISlider) {
+        customizableStackView.padding = CGFloat(sender.value)
     }
-    
-    @IBAction func incrementPaddingButtonPressed(_ sender: Any) {
-        customizableStackView.padding += 1
-        paddingLabel.text = "\(Int(customizableStackView.padding))"
-    }
+
     
     @IBAction func addEmojiPressed(_ sender: UIButton) {
         emojiIndex = (emojiIndex + 1) % emojis.count

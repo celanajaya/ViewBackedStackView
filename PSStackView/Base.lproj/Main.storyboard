@@ -35,7 +35,7 @@
                                     </imageView>
                                 </subviews>
                                 <userDefinedRuntimeAttributes>
-                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundViewBorderColor">
+                                    <userDefinedRuntimeAttribute type="color" keyPath="backgroundBorderColor">
                                         <color key="value" red="0.83156347269999997" green="0.99496281149999999" blue="0.31734806300000001" alpha="1" colorSpace="custom" customColorSpace="displayP3"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="backgroundCornerRadius">
@@ -56,7 +56,7 @@
                                 </userDefinedRuntimeAttributes>
                             </stackView>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="S61-Zo-liG" userLabel="Controls Stack">
-                                <rect key="frame" x="47" y="308" width="281" height="218"/>
+                                <rect key="frame" x="47" y="302.5" width="281" height="229"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="equalSpacing" translatesAutoresizingMaskIntoConstraints="NO" id="u2K-6Y-0tc" userLabel="Add Emoji">
                                         <rect key="frame" x="0.0" y="0.0" width="281" height="30"/>
@@ -93,96 +93,75 @@
                                             <action selector="changeBackgroundBorderColor:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8xa-tQ-Hf2"/>
                                         </connections>
                                     </button>
-                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="2Gl-AO-8bW" userLabel="Slider StackView">
-                                        <rect key="frame" x="0.0" y="94" width="281" height="124"/>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="2Gl-AO-8bW" userLabel="Slider StackView">
+                                        <rect key="frame" x="0.0" y="94" width="281" height="135"/>
                                         <subviews>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="tEI-TU-xiE" userLabel="Background Alpha">
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="tEI-TU-xiE" userLabel="Background Alpha">
                                                 <rect key="frame" x="0.0" y="0.0" width="281" height="30"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alpha" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6eg-aN-uS7">
-                                                        <rect key="frame" x="0.0" y="0.0" width="140.5" height="30"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Alpha:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6eg-aN-uS7">
+                                                        <rect key="frame" x="0.0" y="0.0" width="138" height="30"/>
                                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="1" translatesAutoresizingMaskIntoConstraints="NO" id="oax-9h-LgK">
-                                                        <rect key="frame" x="138.5" y="0.0" width="144.5" height="31"/>
+                                                        <rect key="frame" x="141" y="0.0" width="142" height="31"/>
                                                         <connections>
                                                             <action selector="backgroundAlphaChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="GvF-Yu-7Oa"/>
                                                         </connections>
                                                     </slider>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="IKV-QB-IUK" userLabel="Background Border Width">
-                                                <rect key="frame" x="0.0" y="30" width="281" height="30"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="IKV-QB-IUK" userLabel="Background Border Width">
+                                                <rect key="frame" x="0.0" y="35" width="281" height="30"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Border Width" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gG1-EY-MPc">
-                                                        <rect key="frame" x="0.0" y="0.0" width="140.5" height="30"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Border Width:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gG1-EY-MPc">
+                                                        <rect key="frame" x="0.0" y="0.0" width="138" height="30"/>
                                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="zv8-bT-5t5">
-                                                        <rect key="frame" x="138.5" y="0.0" width="144.5" height="31"/>
+                                                        <rect key="frame" x="141" y="0.0" width="142" height="31"/>
                                                         <connections>
                                                             <action selector="backgroundBorderWidthChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="dGE-Tu-drH"/>
                                                         </connections>
                                                     </slider>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="p9p-v3-qcf" userLabel="Background Corner Radius">
-                                                <rect key="frame" x="0.0" y="60" width="281" height="30"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="p9p-v3-qcf" userLabel="Background Corner Radius">
+                                                <rect key="frame" x="0.0" y="70" width="281" height="30"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Corner Radius" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iJw-8g-qtS">
-                                                        <rect key="frame" x="0.0" y="0.0" width="140.5" height="30"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Corner Radius:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iJw-8g-qtS">
+                                                        <rect key="frame" x="0.0" y="0.0" width="138" height="30"/>
                                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="3" minValue="0.0" maxValue="10" translatesAutoresizingMaskIntoConstraints="NO" id="gBw-mc-jPc">
-                                                        <rect key="frame" x="138.5" y="0.0" width="144.5" height="31"/>
+                                                        <rect key="frame" x="141" y="0.0" width="142" height="31"/>
                                                         <connections>
                                                             <action selector="backgroundBorderRadiusChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="ftx-jD-zKk"/>
                                                         </connections>
                                                     </slider>
                                                 </subviews>
                                             </stackView>
-                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="Z6r-C4-x53" userLabel="Background Corner Radius">
-                                                <rect key="frame" x="0.0" y="90" width="281" height="34"/>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="Z6r-C4-x53" userLabel="Background Corner Radius">
+                                                <rect key="frame" x="0.0" y="105" width="281" height="30"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Padding" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EWh-ap-7ax" userLabel=" Padding Label">
-                                                        <rect key="frame" x="0.0" y="0.0" width="140.5" height="34"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Padding:" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EWh-ap-7ax" userLabel=" Padding Label">
+                                                        <rect key="frame" x="0.0" y="0.0" width="138" height="30"/>
                                                         <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
                                                         <nil key="textColor"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="sJh-ep-Dni" userLabel="Padding Buttons">
-                                                        <rect key="frame" x="140.5" y="0.0" width="140.5" height="34"/>
-                                                        <subviews>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4tW-5F-2Ih">
-                                                                <rect key="frame" x="0.0" y="0.0" width="47" height="34"/>
-                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                                                <state key="normal" title="-"/>
-                                                                <connections>
-                                                                    <action selector="decrementPaddingButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="b5V-Zg-nBx"/>
-                                                                </connections>
-                                                            </button>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Yd8-Lz-dB3" userLabel="Padding Value">
-                                                                <rect key="frame" x="47" y="0.0" width="46.5" height="34"/>
-                                                                <fontDescription key="fontDescription" name="Helvetica" family="Helvetica" pointSize="17"/>
-                                                                <nil key="textColor"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="SSU-dC-vDB">
-                                                                <rect key="frame" x="93.5" y="0.0" width="47" height="34"/>
-                                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
-                                                                <state key="normal" title="+"/>
-                                                                <connections>
-                                                                    <action selector="incrementPaddingButtonPressed:" destination="BYZ-38-t0r" eventType="touchUpInside" id="Rde-gm-td5"/>
-                                                                </connections>
-                                                            </button>
-                                                        </subviews>
-                                                    </stackView>
+                                                    <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" minValue="0.0" maxValue="50" translatesAutoresizingMaskIntoConstraints="NO" id="HJq-9u-5hS">
+                                                        <rect key="frame" x="141" y="0.0" width="142" height="31"/>
+                                                        <connections>
+                                                            <action selector="paddingChanged:" destination="BYZ-38-t0r" eventType="valueChanged" id="RB5-pc-OR5"/>
+                                                        </connections>
+                                                    </slider>
                                                 </subviews>
                                             </stackView>
                                         </subviews>
@@ -201,7 +180,6 @@
                     </view>
                     <connections>
                         <outlet property="customizableStackView" destination="mlP-gH-CQl" id="zly-ik-ApC"/>
-                        <outlet property="paddingLabel" destination="Yd8-Lz-dB3" id="dP5-Qy-em1"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

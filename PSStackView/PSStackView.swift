@@ -11,11 +11,11 @@ import UIKit
 class PSStackView: UIStackView {
     
     private lazy var backgroundView: UIView = {
-        let view = UIView()
-        view.translatesAutoresizingMaskIntoConstraints = false
-        self.insertSubview(view, at: 0)
-        view.pin(to: self)
-        return view
+        let background = UIView()
+        background.translatesAutoresizingMaskIntoConstraints = false
+        self.insertSubview(background, at: 0)
+        background.pinned(to: self)
+        return background
     }()
     
     @IBInspectable
@@ -56,14 +56,18 @@ class PSStackView: UIStackView {
     @IBInspectable
     open var padding: CGFloat = 0 {
         didSet {
+            // remove any constraints related to the background view
+            let backgroundViewConstraints = constraints.filter {$0.firstItem as? UIView == backgroundView ||
+                                                                $0.secondItem as? UIView == backgroundView}
+            removeConstraints(backgroundViewConstraints)
             backgroundView.add(padding: padding, to: self)
         }
     }
     
 }
 
-public extension UIView {
-    public func pin(to view: UIView) {
+fileprivate extension UIView {
+    func pinned(to view: UIView) {
         NSLayoutConstraint.activate([
             leadingAnchor.constraint(equalTo: view.leadingAnchor),
             trailingAnchor.constraint(equalTo: view.trailingAnchor),
@@ -72,7 +76,7 @@ public extension UIView {
         ])
     }
     
-    public func add(padding: CGFloat, to view: UIView) {
+    func add(padding: CGFloat, to view: UIView) {
         NSLayoutConstraint.activate([
             leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: -padding),
             trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: padding),
